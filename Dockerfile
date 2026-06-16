@@ -1,5 +1,3 @@
 FROM quay.io/minio/minio
 
-EXPOSE 10000
-
-CMD ["server", "/data", "--console-address", ":10001", "--address", ":10000"]
+CMD sh -c 'minio server /data --address ":${PORT}" --console-address ":9001"'
